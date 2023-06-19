@@ -227,6 +227,8 @@
 
 #withdraw,
 #deposit,
+#invest,
+#retrieve,
 #transfer {
   background: var(--columnsBackground);
   padding: 1.85vmin;
@@ -239,6 +241,14 @@
 }
 
 #menu #second-column #deposit {
+  height: 18.48vmin;
+}
+
+#menu #second-column #invest {
+  height: 18.48vmin;
+}
+
+#menu #second-column #retrieve {
   height: 18.48vmin;
 }
 

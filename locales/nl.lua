@@ -1,6 +1,8 @@
 Locales['nl'] = {
   ['invalid_amount'] = 'Ongeldig bedrag',
   ['deposit_money']  = 'Je hebt €%s gestort',
+  ['invest_money']  = 'you have invested $%s',
+  ['retrieve_money']  = 'you have retrieve $%s from your investments',
   ['withdraw_money'] = 'Je hebt €%s opgenomen',
   ['pincode_money'] = 'Je nieuwe pincode is %s',
   ['transfer_money'] = 'Met succes €%s overgemaakt naar ID: %s',
@@ -12,5 +14,6 @@ Locales['nl'] = {
   ['not_enough_money'] = "Niet genoeg geld! Je hebt nog %s nodig!",
   ['pincode_not_found'] = "Onjuiste PIN",
   ['pincode_found'] = "Een moment geduld...",
-  ['bank_name'] = "Fleeca Bank"
+  ['bank_name'] = "Fleeca Bank",
+  ['invalid_operation'] = "Invalid Operation"
 }

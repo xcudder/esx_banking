@@ -1,6 +1,8 @@
 Locales['da'] = {
   ['invalid_amount'] = 'Det er et ugyldigt beløb',
   ['deposit_money']  = 'du har indbetalt $%s',
+  ['invest_money']  = 'you have invested $%s',
+  ['retrieve_money']  = 'you have retrieve $%s from your investments',
   ['withdraw_money'] = 'du har udbetalt $%s',
   ['pincode_money'] = 'du har ny pinkode %s',
   ['transfer_money'] = 'du har fuldført penge overførelsen af %s DKK til ID: %s',
@@ -12,5 +14,6 @@ Locales['da'] = {
   ['not_enough_money'] = "Ikke nok penge! Du mangler %s DKK!",
   ['pincode_not_found'] = "Ugyldig PIN-kode",
   ['pincode_found'] = "Gyldig PIN-kode...",
-  ['bank_name'] = "Fleeca Bank"
+  ['bank_name'] = "Fleeca Bank",
+  ['invalid_operation'] = "Invalid Operation"
 }

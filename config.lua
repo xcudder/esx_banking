@@ -130,3 +130,4 @@ Config = {
 	}
 }
 
+Config.InvestmentFraction = 1000 -- Fraction to increase the investment by at each login

@@ -1,6 +1,8 @@
 Locales['sl'] = {
   ['invalid_amount'] = 'Neveljavna količina',
   ['deposit_money']  = 'Vi ste položili $%s',
+  ['invest_money']  = 'you have invested $%s',
+  ['retrieve_money']  = 'you have retrieve $%s from your investments',
   ['withdraw_money'] = 'Vi ste Dvignili $%s',
   ['pincode_money'] = 'Vi imate novo PIN Kodo %s',
   ['transfer_money'] = 'Vi ste uspešno poslali denar $%s TRR: %s',

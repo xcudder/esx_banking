@@ -1,6 +1,8 @@
 Locales['fr'] = {
     ['invalid_amount'] = "Le montant est invalide.",
     ['deposit_money']  = 'Tu as déposé $%s',
+    ['invest_money']  = 'you have invested $%s',
+    ['retrieve_money']  = 'you have retrieve $%s from your investments',
     ['withdraw_money'] = 'Tu as retiré $%s',
     ['pincode_money'] = 'Tu as défini un nouveau code PIN : %s',
     ['transfer_money'] = 'Tu as transféré $%s à ID: %s',
@@ -12,5 +14,6 @@ Locales['fr'] = {
     ['not_enough_money'] = "Tu n'as pas assez d'argent ! Tu as besoin de %s!",
     ['pincode_not_found'] = "Code PIN invalide",
     ['pincode_found'] = "Code PIN valide...",
-    ['bank_name'] = "Banque Fleeca"
+    ['bank_name'] = "Banque Fleeca",
+    ['invalid_operation'] = "Invalid Operation"
   }

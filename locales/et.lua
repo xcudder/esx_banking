@@ -1,6 +1,8 @@
 Locales['et'] = {
   ['invalid_amount'] = 'Tundmatu kogus raha',
   ['deposit_money']  = 'Sa sisestasid $%s',
+  ['invest_money']  = 'you have invested $%s',
+  ['retrieve_money']  = 'you have retrieve $%s from your investments',
   ['withdraw_money'] = 'Sa võtsid välja $%s',
   ['pincode_money'] = 'Uus PIN kood: %s',
   ['transfer_money'] = 'Sa tegid ülekande summas: $%s ID: %s',
@@ -12,5 +14,6 @@ Locales['et'] = {
   ['not_enough_money'] = "Pole piisavalt raha! Sul on vaja %s !",
   ['pincode_not_found'] = "Vale PIN",
   ['pincode_found'] = "Õige PIN...",
-  ['bank_name'] = "Fleeca Pank"
+  ['bank_name'] = "Fleeca Pank",
+  ['invalid_operation'] = "Invalid Operation"
 }

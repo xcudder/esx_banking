@@ -22,11 +22,17 @@ AddEventHandler('onResourceStop', function(resourceName)
     if Config.EnablePeds then BANK.DeletePeds() end
 end)
 
-if Config.EnablePeds then
-    AddEventHandler('esx:playerLoaded', function(playerId)
-        TriggerClientEvent('esx_banking:pedHandler', playerId, netIdTable)
-    end)
-end
+
+AddEventHandler('esx:playerLoaded', function(playerId)
+    if Config.EnablePeds then TriggerClientEvent('esx_banking:pedHandler', playerId, netIdTable) end
+    local InvestedAmount = 0
+    local xPlayer =ESX.GetPlayerFromId(playerId)
+    if xPlayer.getAccount('invested') then
+        InvestedAmount = xPlayer.getAccount('invested').money
+        xPlayer.addAccountMoney('invested', ESX.Math.Round(InvestedAmount / Config.InvestmentFraction))
+    end
+end)
+
 
 -- event
 RegisterServerEvent('esx_banking:doingType')
@@ -39,6 +45,12 @@ AddEventHandler('esx_banking:doingType', function(typeData)
     local identifier = xPlayer.getIdentifier()
     local money = xPlayer.getAccount('money').money
     local bankMoney = xPlayer.getAccount('bank').money
+
+    local invested = 0
+    if xPlayer.getAccount('invested') then
+        invested = xPlayer.getAccount('invested').money
+    end
+
     local amount
 
     local key = get_key(typeData)
@@ -46,6 +58,10 @@ AddEventHandler('esx_banking:doingType', function(typeData)
         amount = tonumber(typeData.deposit)
     elseif typeData.withdraw then
         amount = tonumber(typeData.withdraw)
+    elseif typeData.invest then
+        amount = tonumber(typeData.invest)
+    elseif typeData.retrieve then
+        amount = tonumber(typeData.retrieve)
     elseif typeData.transfer and typeData.transfer.moneyAmount then
         amount = tonumber(typeData.transfer.moneyAmount)
     elseif typeData.pincode then
@@ -58,12 +74,38 @@ AddEventHandler('esx_banking:doingType', function(typeData)
     if amount == nil or (not typeData.pincode and amount <= 0) then
         TriggerClientEvent("esx:showNotification", source, TranslateCap('invalid_amount'), "error")
     else
-        if typeData.deposit and amount <= money then
+        if typeData.deposit then
             -- deposit
-            BANK.Deposit(amount, xPlayer)
-        elseif typeData.withdraw and bankMoney ~= nil and amount <= bankMoney then
+            if amount <= money then
+                BANK.Deposit(amount, xPlayer)
+            else
+                TriggerClientEvent("esx:showNotification", source, TranslateCap('not_enough_money', amount), "error")
+                return
+            end
+        elseif typeData.invest then
+            -- invest
+            if bankMoney ~= nil and amount <= bankMoney then
+                BANK.Invest(amount, xPlayer)
+            else
+                TriggerClientEvent("esx:showNotification", source, TranslateCap('not_enough_money', amount), "error")
+                return
+            end
+        elseif typeData.retrieve then
+            -- retrieve
+            if  invested ~= nil and amount <= invested then
+                BANK.Retrieve(amount, xPlayer)
+            else
+                TriggerClientEvent("esx:showNotification", source, TranslateCap('not_enough_money', amount), "error")
+                return
+            end
+        elseif typeData.withdraw then
             -- withdraw
-            BANK.Withdraw(amount, xPlayer)
+            if bankMoney ~= nil and amount <= bankMoney then
+                BANK.Withdraw(amount, xPlayer)
+            else
+                TriggerClientEvent("esx:showNotification", source, TranslateCap('not_enough_money', amount), "error")
+                return
+            end
         elseif typeData.pincode then
             -- pincode
             BANK.Pincode(amount, identifier)
@@ -84,7 +126,7 @@ AddEventHandler('esx_banking:doingType', function(typeData)
                 return
             end
         else
-            TriggerClientEvent("esx:showNotification", source, TranslateCap('not_enough_money', amount), "error")
+            TriggerClientEvent("esx:showNotification", source, TranslateCap('invalid_operation'), "error")
             return
         end
 
@@ -100,7 +142,7 @@ AddEventHandler('esx_banking:doingType', function(typeData)
             BANK.LogTransaction(source,string.upper(key), string.upper(key), amount, bankMoney)
         end
 
-        TriggerClientEvent("esx_banking:updateMoneyInUI", source, key, bankMoney, money)
+        TriggerClientEvent("esx_banking:updateMoneyInUI", source, key, bankMoney, money, invested)
     end
 end)
 
@@ -115,8 +157,15 @@ ESX.RegisterServerCallback("esx_banking:getPlayerData", function(source, cb)
         playerName = xPlayer.getName(),
         money = xPlayer.getAccount('money').money,
         bankMoney = xPlayer.getAccount('bank').money,
-        transactionHistory = transactionHistory
+        transactionHistory = transactionHistory,
+        invested = 0
     }
+
+    if xPlayer.getAccount('invested') then
+        playerData['invested'] = xPlayer.getAccount('invested').money
+    else
+        playerData['invested'] = 0
+    end
 
     cb(playerData)
 end)
@@ -136,12 +185,12 @@ function logTransaction(targetSource,label, key,amount)
     end
 
     if key == nil then
-        print("ERROR: Do you need use these: WITHDRAW,DEPOSIT,TRANSFER_RECEIVE")
+        print("ERROR: Do you need use these: WITHDRAW,DEPOSIT,INVEST,RETRIEVE,TRANSFER_RECEIVE")
         return
     end
     
     if type(key) ~= "string" or key == '' then
-        print("ERROR: Do you need use these: WITHDRAW,DEPOSIT,TRANSFER_RECEIVE and can only be string type!")
+        print("ERROR: Do you need use these: WITHDRAW,DEPOSIT,INVEST,RETRIEVE,TRANSFER_RECEIVE and can only be string type!")
         return
     end
 
@@ -196,6 +245,18 @@ BANK = {
     end,
     Deposit = function(amount, xPlayer)
         xPlayer.removeAccountMoney('money', amount)
+        xPlayer.addAccountMoney('bank', amount)
+    end,
+    Invest = function(amount, xPlayer)
+        if amount < 1000 then
+            TriggerClientEvent("esx:showNotification", source, TranslateCap("cant_do_it"), "error")
+            return false
+        end
+        xPlayer.removeAccountMoney('bank', amount)
+        xPlayer.addAccountMoney('invested', amount)
+    end,
+    Retrieve = function(amount, xPlayer)
+        xPlayer.removeAccountMoney('invested', amount)
         xPlayer.addAccountMoney('bank', amount)
     end,
     Transfer = function(xTarget, xPlayer, amount, key)

@@ -1,6 +1,8 @@
 Locales['hu'] = {
     ['invalid_amount'] = 'Érvénytelen pénz mennyiség',
     ['deposit_money']  = 'Befizettél %s$-t',
+    ['invest_money']  = 'you have invested $%s',
+    ['retrieve_money']  = 'you have retrieve $%s from your investments',
     ['withdraw_money'] = 'Kivettél %s$-t',
     ['pincode_money'] = 'Az új PIN kódod: %s',
     ['transfer_money'] = 'Sikeres utalás! Összeg: $%s ID: %s',
@@ -12,5 +14,6 @@ Locales['hu'] = {
     ['not_enough_money'] = "Nincs elég pénzed, még szükséged lesz ennyire: %s",
     ['pincode_not_found'] = "Érvénytelen PIN kód",
     ['pincode_found'] = "Érvényes PIN kód...",
-    ['bank_name'] = "Fleeca Bank"
+    ['bank_name'] = "Fleeca Bank",
+    ['invalid_operation'] = "Invalid Operation"
 }

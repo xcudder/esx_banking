@@ -1,6 +1,8 @@
 Locales['fi'] = {
   ['invalid_amount'] = 'Virheellinen summa',
   ['deposit_money']  = 'Olet tallettanut $%s',
+  ['invest_money']  = 'you have invested $%s',
+  ['retrieve_money']  = 'you have retrieve $%s from your investments',
   ['withdraw_money'] = 'Olet nostanut $%s',
   ['pincode_money'] = 'Sinulla on uusi PIN-koodi %s',
   ['transfer_money'] = 'Siirsit onnistuneesti rahaa $%s ID: %s',
@@ -12,5 +14,6 @@ Locales['fi'] = {
   ['not_enough_money'] = "Ei tarpeeksi rahaa! Tarvitset %s rahaa!",
   ['pincode_not_found'] = "Virheellinen PIN-koodi",
   ['pincode_found'] = "Kelvollinen PIN-koodi...",
-  ['bank_name'] = "Pankki"
+  ['bank_name'] = "Pankki",
+  ['invalid_operation'] = "Invalid Operation"
 }

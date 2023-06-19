@@ -145,6 +145,9 @@ local playerLoaded, uiActive, inMenu = false, false, false
                         }, {
                             name = "bank",
                             amount = data.bankMoney
+                        }, {
+                            name = "invested",
+                            amount = data.invested
                         }}
                     },
                     bankCardData = {
@@ -187,13 +190,14 @@ RegisterNetEvent('esx_banking:pedHandler', function(netIdTable)
     end
 end)
 
-RegisterNetEvent('esx_banking:updateMoneyInUI', function(doingType, bankMoney, money)
+RegisterNetEvent('esx_banking:updateMoneyInUI', function(doingType, bankMoney, money, invested)
     SendNUIMessage({
         updateData = true,
         data = {
             type = doingType,
             bankMoney = bankMoney,
-            money = money
+            money = money,
+            invested = invested,
         }
     })
 end)

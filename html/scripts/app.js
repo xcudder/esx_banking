@@ -148,6 +148,10 @@ class Components {
 
 					<div id="deposit"></div>
 
+          <div id="invest"></div>
+
+					<div id="retrieve"></div>
+
 					<div id="transfer"></div>
 				</div>
 
@@ -449,6 +453,12 @@ class Render {
           `${this.language.moneyFormat.replace(
             "__replaceData__",
             newData.bankMoney
+          )}`
+        );
+        $("#money-invested").html(
+          `${this.language.moneyFormat.replace(
+            "__replaceData__",
+            newData.invested
           )}`
         );
         break;
@@ -773,6 +783,12 @@ $(document).ready(function () {
           case "DEPOSIT":
             trans.type = languageText.deposit;
             break;
+          case "INVEST":
+            trans.type = languageText.invest;
+            break;
+          case "RETRIEVE":
+            trans.type = languageText.retrieve;
+            break;
           case "TRANSFER_RECEIVE":
             trans.type = languageText.transferReceive;
             break;
@@ -817,6 +833,10 @@ $(document).ready(function () {
         info = { label: languageText.withdraw, amount: amount };
       } else if ((amount = currentInputValues.deposit)) {
         info = { label: languageText.deposit, amount: amount };
+      } else if ((amount = currentInputValues.invest)) {
+        info = { label: languageText.invest, amount: amount };
+      } else if ((amount = currentInputValues.retrieve)) {
+        info = { label: languageText.retrieve, amount: amount };
       } else if ((amount = currentInputValues.transfer?.moneyAmount)) {
         info = { label: languageText.transfer, amount: amount };
       } else if (currentInputValues.pincode) {

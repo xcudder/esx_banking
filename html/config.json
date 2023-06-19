@@ -39,6 +39,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Transfer",
@@ -75,6 +93,7 @@
       "your_money_desc": "Here you can see your current balance and cash.",
       "your_money_cash_label": "Your cash",
       "your_money_bank_label": "Your bank balance",
+      "your_money_invested_label": "Your investments",
       "withdraw": "WITHDRAW",
       "deposit": "DEPOSIT",
       "transfer": "TRANSFER",
@@ -137,6 +156,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Utalás",
@@ -173,6 +210,7 @@
       "your_money_desc": "Itt láthatod a jelenlegi egyenleged és készpénzed.",
       "your_money_cash_label": "Készpénz",
       "your_money_bank_label": "Banki egyenleged",
+      "your_money_invested_label": "Your investments",
       "withdraw": "KIVÉTEL",
       "deposit": "BETÉTEL",
       "transfer": "UTALÁS",
@@ -235,6 +273,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "trasferisci",
@@ -271,6 +327,7 @@
       "your_money_desc": "qui puoi vedere il saldo attuale e contanti.",
       "your_money_cash_label": "i tuoi soldi",
       "your_money_bank_label": "il tuo saldo bancario",
+      "your_money_invested_label": "Your investments",
       "withdraw": "RITIRARE",
       "deposit": "DEPOSITARE",
       "transfer": "TRASFERIMENTO",
@@ -333,6 +390,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Transfererir",
@@ -369,6 +444,7 @@
       "your_money_desc": "Aquí puedes ver tu saldo actual y tu efectivo.",
       "your_money_cash_label": "Su dinero en mano",
       "your_money_bank_label": "Su saldo bancario",
+      "your_money_invested_label": "Your investments",
       "withdraw": "RETIRAR",
       "deposit": "DEPÓSITO",
       "transfer": "TRANSFERENCIA",
@@ -431,6 +507,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Transférer",
@@ -467,6 +561,7 @@
       "your_money_desc": "Ici, vous pouvez voir votre solde actuel et votre argent en espèces.",
       "your_money_cash_label": "Votre argent en espèces",
       "your_money_bank_label": "Votre solde bancaire",
+      "your_money_invested_label": "Your investments",
       "withdraw": "RETIRER",
       "deposit": "DÉPOSER",
       "transfer": "TRANSFERT",
@@ -529,6 +624,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Overschrijven",
@@ -565,6 +678,7 @@
       "your_money_desc": "Hier kun je je saldo en je cash zien.",
       "your_money_cash_label": "Jouw cash",
       "your_money_bank_label": "Jouw bank saldo",
+      "your_money_invested_label": "Your investments",
       "withdraw": "OPNEMEN",
       "deposit": "STORTEN",
       "transfer": "OVERSCHRIJVEN",
@@ -627,6 +741,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "转账",
@@ -663,6 +795,7 @@
       "your_money_desc": "在这里您可以看到您当前的余额和现金.",
       "your_money_cash_label": "您的现金",
       "your_money_bank_label": "您的银行余额",
+      "your_money_invested_label": "Your investments",
       "withdraw": "提现",
       "deposit": "存款",
       "transfer": "转账",
@@ -725,6 +858,24 @@
         "type": "number"
       },
       {
+        "elementID": "#invest",
+        "name": "invest",
+        "buttonText": "Invest",
+        "inputPlaceholder": "Amount",
+        "title": "INVEST",
+        "description": "Here, you can invest your money with the bank.",
+        "type": "number"
+      },
+      {
+        "elementID": "#retrieve",
+        "name": "retrieve",
+        "buttonText": "Retrieve",
+        "inputPlaceholder": "Amount",
+        "title": "RETRIEVE",
+        "description": "Here, you can retrieve your investment.",
+        "type": "number"
+      },
+      {
         "elementID": "#transfer",
         "name": "transfer",
         "buttonText": "Transfer",
@@ -761,6 +912,7 @@
       "your_money_desc": "Ovde možete videti iznos novca na vašem računu i kod vas",
       "your_money_cash_label": "Vaš novac",
       "your_money_bank_label": "Vaš novac na računu",
+      "your_money_invested_label": "Your investments",
       "withdraw": "PODIGNI",
       "deposit": "UPLATI",
       "transfer": "TRANSFER",
